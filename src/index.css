@@ -29,7 +29,7 @@ body{
 #root {
     max-width: 144rem;
     position: relative;
-    height: 100vh;
+    height: 900px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -319,6 +319,7 @@ main {
     outline: none;
     position: relative;
     padding-bottom: 1.2rem;
+    text-transform: uppercase;
 }
 
 
@@ -569,3 +570,271 @@ main {
 
 }
 
+/* MEDIA QUERIES  ////////////////////////////////////////////////////////
+BREAKPOINTS: 
+desktop-mini 1366PX = 85.375em
+tablet-land 1130px = 70.625em
+tablet 768px = 48em
+phone 375px= 23.44em
+*/
+
+
+@media only screen and (max-width : 85.375em) {
+    .navbar__list::before {
+        display: none
+    }
+}
+
+@media only screen and (max-width: 70.625em) {
+    .destination {
+        padding: 0 2.5rem 6rem;
+    }
+
+    .crew {
+        padding: 0px 3rem 0 3rem;
+    }
+
+    .techtemplate {
+        padding-left: 4rem;
+    }
+
+    .techcontent__text {
+        padding: 0;
+    }
+
+    .techcontent__buttonlist {
+        margin-right:1rem;
+    }
+
+}
+
+@media only screen and (max-width: 48em) {
+
+    #root {
+        height: 1024px;
+        overflow:hidden;
+    }
+    html {
+        font-size: 55%;
+    }
+    header {
+        top: 0px;
+    }
+    /*NAVBAR /////////////////*/
+    .navbar__list {
+        width: 45rem;
+        padding: 48px;
+    }
+
+    .navbar__list-item {
+        padding-right: 25px;
+    }
+
+    .navbar-number {
+        display: none;
+    }
+
+    .navbar__list-link::after {
+        top:50px;
+    }
+
+    .active {
+        padding-bottom: 33px;
+    }
+
+    /*HOME ////////////////*/ 
+    .homepage {
+        background-image: url(assets/home/background-home-tablet.jpg);
+        background-repeat: no-repeat;
+        flex-direction: column;
+        padding: 202px 159px 90px ;
+        align-items: center;
+    }
+    .homepage__button::after {
+        top: 1%;
+        left: 1%;
+        width: 28.4rem;
+        height: 27.4rem;
+    }
+
+
+    /* DESTINATION //////////*/
+
+    .destination {
+        padding: 0;
+        background-image: url(assets/destination/background-destination-tablet.jpg);
+        background-repeat: no-repeat;
+    }
+
+    .destinationtemplate {
+        flex-direction: column;
+        height: 100%;
+        align-items: center;
+    }
+
+    .destination-box1 {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .box1__pick {
+        font-size: 20px;
+        margin: 136px 0 60px 55px;
+        width: 100%;
+    }
+
+    .box1__planetfig {
+        align-self: center;
+    }
+    .planetimage {
+        width: 300px;
+    }
+
+    .planet__title {
+        font-size: 80px;
+        margin-top: 10px;
+    }
+
+    .destination-box2 {
+        width: 90%;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .planet__list {
+        margin-top: 30px;
+        justify-content: center;
+        margin-left: 35px;
+    }
+
+    .planet__name {
+        margin-right: 3rem;
+    }
+
+    .planet__paragraph {
+        padding: 0 32px;
+    }
+
+ /* CREW ///////////////////*/
+
+    .crew {
+        padding-top: 50px;
+        background-image: url(assets/crew/background-crew-tablet.jpg);
+        background-repeat: no-repeat;
+    }
+    .crewtemplate {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .crew__call {
+        font-size: 20px;
+        align-self: flex-start;
+        height: 70px;
+        padding-left: 20px;
+    }
+
+    .crew__box1 {
+        text-align: center;
+        justify-content: end;
+    }
+
+    .crew__box1-buttons {
+        padding-bottom: 50px;
+    }
+    .crew__button {
+        padding: 6px;
+    }
+
+    .crew-text {
+        height: 200px;
+    }
+
+    .crew-text__crew-name {
+        margin: 0;
+        font-size: 40px;
+        margin-bottom: 5px
+    }
+
+    .crew-text__crew-role {
+        margin-bottom: 10px;
+    }
+
+    .crew-text__crew-bio {
+        width: 100%;
+        height: 100px;
+    }
+
+
+    .crew__box2 {
+        margin-bottom:-40px ;
+    }
+
+    .crew__image {
+        height:572px;
+    }
+
+
+
+    /* TECHNOLOGY ////////////*/
+
+    .technology {
+        background-image: url(assets/technology/background-technology-tablet.jpg);
+        background-repeat: no-repeat;
+        height: 100%;
+    }
+
+    .techtemplate {
+        padding: 135px 0 90px;
+        
+    }
+    .tech__call {
+        font-size: 20px;
+        margin-bottom: 60px;
+        padding-left: 40px;
+
+    }
+
+    .techcontent {
+        flex-direction: column;
+    }
+
+    .techcontent__imgbox {
+        width: 100%;
+        order: -2;
+        margin-bottom: 56px;
+    }
+    .techcontent__img {
+        width: 102%;
+        height: 310px;
+    }
+
+    .techcontent__buttonlist {
+        flex-direction: row;
+        order: -1;
+        margin-bottom: 25px;
+        justify-content: space-between;
+    }
+
+    .techcontent__btn:nth-of-type(2) {
+        margin-right: 25px;
+        margin-left: 25px;
+    }
+
+    .techcontent__btn {
+        padding: 15px 28px;
+    }
+
+    .techcontent__text {
+        text-align: center;
+        width: 460px;
+    }
+
+    .techcontent__text-title {
+        font-size: 40px;
+    }
+}
+
+/* @media only screen and (max-width: 23.44em) {
+
+
+} */

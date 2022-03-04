@@ -1,16 +1,15 @@
 import React from 'react'
-import Technology from './Technology'
 import { useState } from 'react'
 import TechCall from './TechCall'
 import { AnimatePresence, motion } from 'framer-motion'
-
+import TechnologyImg from './TechnologyImg'
 function TechnologyTemplate({ techdata }) {
 
     const [selected, setSelected] = useState(techdata[0])
     const { name, images, description } = selected
-    console.log(techdata.map((i) => {
-        return (techdata.indexOf(i))
-    }))
+    // console.log(techdata.map((i) => {
+    //     return (techdata.indexOf(i))
+    // }))
 
     return (
         <motion.div
@@ -45,17 +44,7 @@ function TechnologyTemplate({ techdata }) {
                         <p className='paragraph techcontent__text-p'>{description}</p>
                     </motion.div>
                 </AnimatePresence>
-                <AnimatePresence exitBeforeEnter>
-                    <motion.div
-                        key={name}
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -50 }}
-                        transition={{ duration: 1 }}
-                        className="techcontent__imgbox">
-                        <img className="techcontent__img" src={require('../../' + images.portrait.slice(2))} />
-                    </motion.div>
-                </AnimatePresence>
+                <TechnologyImg name={name} images={images} />
             </div>
         </motion.div>
     )
