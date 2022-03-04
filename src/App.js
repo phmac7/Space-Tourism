@@ -1,5 +1,5 @@
 import './index.css';
-import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './components/Home/HomePage';
 import Navbar from './components/NavBar/Navbar';
 import Destination from './components/Destination/Destination';
@@ -7,9 +7,7 @@ import Crew from './components/Crew/Crew';
 import Technology from './components/Technology/Technology'
 
 function App() {
-
     return (
-
         <Router>
             <header>
                 <Navbar />

@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import CrewData from './CrewData'
 import CrewTemplate from './CrewTemplate'
+import AnimatedPage from '../AnimatedPage'
 
 function Crew() {
 

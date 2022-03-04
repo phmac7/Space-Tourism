@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import CrewText from './CrewText'
 import CrewCall from './CrewCall'
+import { AnimatePresence, motion } from 'framer-motion'
 
 
 function CrewTemplate({ crewdata }) {
@@ -12,7 +13,12 @@ function CrewTemplate({ crewdata }) {
 
     return (
         <>
-            <div className="crewtemplate">
+            <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 1 }}
+                className="crewtemplate">
                 <div className="crew__box1">
                     <CrewCall />
                     <CrewText role={role} bio={bio} name={name} />
@@ -28,10 +34,18 @@ function CrewTemplate({ crewdata }) {
                     </div>
                 </div>
                 <div className="crew__box2">
-                    <img className='crew__image' src={require('../../' + images.png.slice(2))}
-                        alt={name} />
+                    <AnimatePresence exitBeforeEnter>
+                        <motion.img
+                            key={name}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.8 }}
+                            transition={{ duration: 1 }}
+                            className='crew__image' src={require('../../' + images.png.slice(2))}
+                            alt={name} />
+                    </AnimatePresence>
                 </div>
-            </div>
+            </motion.div>
         </>
     )
 }

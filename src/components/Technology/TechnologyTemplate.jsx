@@ -2,6 +2,7 @@ import React from 'react'
 import Technology from './Technology'
 import { useState } from 'react'
 import TechCall from './TechCall'
+import { AnimatePresence, motion } from 'framer-motion'
 
 function TechnologyTemplate({ techdata }) {
 
@@ -12,7 +13,12 @@ function TechnologyTemplate({ techdata }) {
     }))
 
     return (
-        <div className='techtemplate'>
+        <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -50 }}
+            transition={{ duration: 1 }}
+            className='techtemplate'>
             <TechCall />
             <div className='techcontent'>
                 <div className="techcontent__buttonlist">
@@ -26,16 +32,32 @@ function TechnologyTemplate({ techdata }) {
                         )
                     })}
                 </div>
-                <div className="techcontent__text">
-                    <span className='techcontent__text-subtitle'>The terminology...</span>
-                    <h3 className='h3 techcontent__text-title h3'>{name}</h3>
-                    <p className='paragraph techcontent__text-p'>{description}</p>
-                </div>
-                <div className="techcontent__imgbox">
-                    <img className="techcontent__img" src={require('../../' + images.portrait.slice(2))} />
-                </div>
+                <AnimatePresence exitBeforeEnter>
+                    <motion.div
+                        key={name}
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -50 }}
+                        transition={{ duration: 1 }}
+                        className="techcontent__text">
+                        <span className='techcontent__text-subtitle'>The terminology...</span>
+                        <h3 className='h3 techcontent__text-title h3'>{name}</h3>
+                        <p className='paragraph techcontent__text-p'>{description}</p>
+                    </motion.div>
+                </AnimatePresence>
+                <AnimatePresence exitBeforeEnter>
+                    <motion.div
+                        key={name}
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -50 }}
+                        transition={{ duration: 1 }}
+                        className="techcontent__imgbox">
+                        <img className="techcontent__img" src={require('../../' + images.portrait.slice(2))} />
+                    </motion.div>
+                </AnimatePresence>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

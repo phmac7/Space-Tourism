@@ -31,6 +31,7 @@ body{
     position: relative;
     height: 100vh;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 header {
@@ -399,6 +400,7 @@ main {
     display:flex;
     justify-content: space-between;
     height: 100%;
+    width: 100%;
     align-items: flex-end;
 }
 
@@ -447,7 +449,6 @@ main {
     margin-right: 2rem;
     padding: 7.5px;
     border-radius: 50%;
-    outline: none;
     border: none;
     background-color: #979797;
     cursor: pointer;
@@ -519,7 +520,6 @@ main {
     border: 1px solid rgba(255, 255, 255, .25);
     padding: 25px 36px;
     border-radius: 50%;
-    outline: none;
     cursor:pointer;
     position: relative;
     margin-bottom: 2rem;

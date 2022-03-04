@@ -1,7 +1,8 @@
 import React from 'react';
 import PlanetImage from './PlanetImage';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import DescriptionPlanet from './DescriptionPlanet'
+import { AnimatePresence, motion } from 'framer-motion'
 
 function DestinationTemplate({ planetdata }) {
 
@@ -11,10 +12,14 @@ function DestinationTemplate({ planetdata }) {
 
     return (
         <>
-            <div className="destinationtemplate">
+            <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 1 }}
+                className="destinationtemplate">
                 <PlanetImage url={images} planetname={name} />
                 <div className="destination-box2">
-
                     <ul className="planet__list">
                         {planetdata.map((i) => {
                             return (
@@ -32,8 +37,9 @@ function DestinationTemplate({ planetdata }) {
                         distance={distance}
                         travel={travel}
                     />
+
                 </div>
-            </div>
+            </motion.div>
         </>
     )
 }
