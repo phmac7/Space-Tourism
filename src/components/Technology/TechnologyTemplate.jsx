@@ -16,20 +16,23 @@ function TechnologyTemplate({ techdata }) {
             <TechCall />
             <div className='techcontent'>
                 <div className="techcontent__buttonlist">
-                    {/* {techdata.map((i)=> {
-                        <button 
-                        className='techcontent__buttonlist-button'>
-                            {}
-                        </button>
-                    })} */}
+                    {techdata.map((i) => {
+                        return (
+                            <button key={i.name}
+                                onClick={() => { setSelected(techdata[techdata.indexOf(i)]) }}
+                                className={selected === techdata[techdata.indexOf(i)] ? 'techcontent__btn tech__active' : 'techcontent__btn'}>
+                                {techdata.indexOf(i) + 1}
+                            </button>
+                        )
+                    })}
                 </div>
                 <div className="techcontent__text">
                     <span className='techcontent__text-subtitle'>The terminology...</span>
-                    <h3 className='h3 techcontent__text-title'>{name}</h3>
+                    <h3 className='h3 techcontent__text-title h3'>{name}</h3>
                     <p className='paragraph techcontent__text-p'>{description}</p>
                 </div>
-                <div className="techcontent__img">
-                    <img src={require('../../' + images.landscape.slice(2))} />
+                <div className="techcontent__imgbox">
+                    <img className="techcontent__img" src={require('../../' + images.portrait.slice(2))} />
                 </div>
             </div>
         </div>
