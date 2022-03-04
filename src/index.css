@@ -1,13 +1,482 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+:root {
+    /* COLORS */
+    --dark: #0B0d17;
+    --light: #d0d6f9;
+    --white: #ffffff;
+
+    /* TYPOGRAPHY */
+
+        /* font-family */
+    --family-bellefair:'Bellefair', serif;
+    --family-Barlow: 'Barlow Condensed', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*, *:after, *:before {
+    margin:0;
+    padding: 0;
+    box-sizing: inherit;
 }
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+body{
+    background-color: var(--dark);
+}
+
+
+#root {
+    max-width: 144rem;
+    position: relative;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    height: 9.6rem;
+    position: absolute;
+    top: 40px;
+    z-index: 1;
+}
+
+main {
+    max-width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+/* NAVBAR */
+
+.navbar {
+    display: flex;
+    max-width: 144rem;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__logo {
+    margin-left: 55px;
+}
+
+.navbar__list {
+    list-style: none;
+    display:flex;
+    width: 83rem;
+    height: 100%;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    padding-left: 12rem;
+
+}
+
+.navbar__list::before {
+    content: "";
+    position:absolute;
+    left: -44rem;
+    top: 50%;
+    width: 47rem;
+    height:1px;
+    background-color: #979797;
+    opacity: 0.6
+}
+
+.navbar__list:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #3c3c3c;
+    z-index: -1;
+    filter: opacity(.2);
+}
+
+.navbar__list-item {
+    padding-right: 4rem;
+    position: relative;
+}
+
+.navbar__list-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    top: 55px;
+    right: 0;
+    background-color: var(--white);
+    display:none;
+}
+
+
+.navbar__list-link,
+.navbar__list-link:visited {
+    position: relative;
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1.6rem;
+    letter-spacing: 2.7px;
+    font-family: var(--family-Barlow);
+    outline: none;
+}
+
+.active{
+    border-bottom: 3px solid var(--white);
+    height: 100%;
+    padding-bottom: 36px;
+
+}
+
+
+.navbar__list-link:hover::after,
+.navbar__list-link:focus::after,
+.navbar__list-link:active::after {
+    display: block;
+}
+
+.navbar-number {
+    font-weight: bold;
+}
+
+.h1, .h2, .h3, .h4 {
+    font-family: var(--family-bellefair);
+    color: var(--white);
+    font-weight: 400;
+}
+
+.h1 {
+    font-size: 150px;
+    
+}
+
+.h2 {
+    font-size: 100px;
+}
+
+.h3 {
+    font-size: 56px;
+}
+
+.h4 {
+    font-size: 32px;
+}
+
+.h5 {
+    font-size: 28px;
+    letter-spacing: 4.75px;
+    color: var(--light);
+    font-family:var(--family-Barlow);
+    font-weight: 400;
+}
+
+.paragraph {
+    color: var(--white);
+    font-family: var(--family-Barlow);
+    font-size: 18px;
+    font-weight: 400;
+}
+/* HOMEPAGE ////////////////////////////////////////////////////////////////*/
+
+.homepage{   
+    background-image: url('assets/home/background-home-desktop.jpg');
+    background-repeat: no-repeat round;
+    padding: 0 16.5rem 13.1rem;
+
+}
+
+.default-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    display:flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    z-index: 0;
+}
+
+.home__text {
+    width: 45rem;
+    height: 38.2rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.home__text .h5 {
+    text-transform: uppercase;
+}
+
+.home__text .paragraph{
+    color: var(--light);
+    line-height: 3.2rem;
+}
+
+.homepage__button, .homepage__button:visited {
+    text-decoration: none;    
+    text-transform: uppercase;
+    position: relative;
+    padding: 11.6rem 6.9rem;
+    background-color: var(--white);
+    border-radius: 50%;
+}
+.homepage__button h4 {
+    color: var(--dark);
+}
+
+.homepage__button::after {
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 27.4rem;
+    height: 27.4rem;
+    border-radius: 50%;
+    background-color: #24262f;
+    z-index: -1;
+    pointer-events: none;
+    opacity: .8;
+    transition: transform .3s;
+}
+
+
+.homepage__button:hover::after {
+    transform: scale(1.5);
+}
+
+
+
+/* DESTINATION PAGE //////////////////////////////////////////////////////////*/
+
+.destination {
+    background-image: url('assets/destination/background-destination-desktop.jpg');
+    background-repeat: no-repeat round;
+    padding: 0 16.5rem 13.1rem;
+}
+
+.destinationtemplate {
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 72%;
+}
+
+.destination-box1 {
+    width: 45% ;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70%;
+    color: var(--white);
+    font-size: 28px;
+    font-family: var(--family-Barlow);
+    letter-spacing: 4.72px;
+}
+.box1__pick {
+    margin-bottom: 9.5rem;
+    text-transform: uppercase;
+}
+.box1__planetfig {
+    align-self: flex-end;
+}
+.box1__pick-number {
+    opacity: .25;
+    margin-right: 3.4rem;
+}
+
+
+
+.destination-box2 {
+    width: 40%;
+    padding-right: 5rem;
+    display:flex;
+    flex-direction: column;
+}
+
+.planet__list {
+    display:flex;
+    margin-top: 10rem;
+    list-style: none;
+    margin-bottom: 2.3rem;
+}
+
+.planet__name {
+    margin-right: 3.5rem;;
+}
+
+
+.planet__name-btn {
+    border: none;
+    background-color: inherit;
+    color: var(--light);
+    font-size: 16px;
+    letter-spacing: 2.7px;
+    font-family: var(--family-Barlow);
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding-bottom: 1.2rem;
+}
+
+
+.planet__name-btn:active,
+.planet__nane-btn:focus,
+.planet__name-on {
+    color: var(--white);
+    border-bottom: 3px solid var(--white);
+    margin-bottom: -3px;
+}
+
+.planet__name-btn:hover {
+    color: var(--light);
+    border-bottom: 3px solid var(--light);
+    margin-bottom: -3px;
+}
+
+.planet__title {
+    text-transform: uppercase;
+}
+
+.planet__paragraph {
+    line-height: 3.2rem;
+    color: var(--light);
+    margin-bottom: 8rem;
+}
+
+.planetsubinfo::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #383B4B;
+    top: -28px;
+}
+
+.planetsubinfo {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.avgdistance, 
+.traveltime {
+    display: flex;
+    flex-direction: column;
+    flex:1;
+}
+
+.avgdistance__title,
+.traveltime__title {
+    color: var(--light);
+    text-transform: uppercase;
+    font-family: var(--family-Barlow);
+    font-weight: 300;
+    font-size: 14px;
+    margin-bottom: 1.3rem;
+}
+
+.avgdistance__value,
+.traveltime__value {
+    font-size: 28px;
+    color: var(--white);
+    font-family: var(--family-bellefair);
+    text-transform: uppercase;
+}
+
+
+/* CREW PAGE ///////////////////////////////////////////////////////////*/
+
+
+.crew {
+    background-image: url(/src/assets/crew/background-crew-desktop.jpg);
+    background-repeat: no-repeat round;
+    padding: 0 15rem 0 16rem;
+}
+
+.crewtemplate {
+    display:flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: flex-end;
+}
+
+.crew__box1 {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 75%;
+}
+
+.crew__call {
+    font-family: var(--family-Barlow);
+    font-size: 28px;
+    line-height: 4.72px;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 4.75px;
+    font-weight: 300;
+}
+
+.crew-text {
+    margin-bottom: 1rem;
+}
+
+.crew-text__crew-role {
+    font-family: var(--family-bellefair);
+    text-transform: uppercase;
+    opacity: .5;
+    margin-bottom: 2.4rem;
+}
+
+.crew-text__crew-name {
+    text-transform: uppercase;
+    font-family: var(--family-bellefair);
+    margin-bottom: 4rem;
+}
+
+.crew-text__crew-bio {
+    color: var(--light);
+    line-height: 3.2rem;
+    font-weight: 300;
+    width: 70%;
+}
+
+.crew__button {
+    margin-right: 2rem;
+    padding: 7.5px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    background-color: #979797;
+    cursor: pointer;
+}
+.crew__box1-buttons {
+    padding-bottom: 9rem;
+}
+
+.crew__button:hover,
+.crew__button:focus {
+    background-color: var(--light);
+}
+.crew__button:active {
+    background-color: var(--white);
+}
+
+.crew__button-active {
+    background-color: var(--white);
+}
+
+
+/* // TECHNOLOGY PAGE ////////////////////////////////////////////////*/
+
+.technology {
+    background-image: url(/src/assets/technology/background-technology-desktop.jpg);
+    background-repeat: no-repeat round;
+    height: 100vh;
+}
+
+
+
