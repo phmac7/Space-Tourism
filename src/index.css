@@ -61,6 +61,10 @@ main {
     margin-left: 55px;
 }
 
+.hamburger {
+    display: none;
+}
+
 .navbar__list {
     list-style: none;
     display:flex;
@@ -834,7 +838,245 @@ phone 375px= 23.44em
     }
 }
 
-/* @media only screen and (max-width: 23.44em) {
+@media only screen and (max-width: 23.44em) {
+
+    /* NAVBAR  /////*/
+    #root {
+        max-height: 850px;
+    }
+    main {
+        height: auto;
+    }
+
+    .navbar__list {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        background-color: transparent;
+        border: none;
+        margin: 33px 24px 0 0;
+        cursor: pointer;
+    }
+    .navbar__logo {
+        margin: 33px 0 0 24px;
+    }
+
+    .navbar__list {
+        display: flex ;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 254px;
+        padding: 118px 0 0 32px;
+        align-items: flex-start;
+        display: none;
+    }
+
+    .navbar__list-item {
+        padding: 0;
+        width: 100%;
+        margin-bottom: 32px;
+    }
+
+    .navbar-number {
+        display: inline-block;
+        margin-right: 11px ;
+    }
+
+    .navbar__list-link {
+        height: 17px;
+        padding-bottom: 0;
+        width: 100%;
+        display: inline-block
+    }
+
+    .active {
+        border-bottom: 0;
+        border-right: 3px solid var(--white);
+        
+    }
+
+    .navbar__list-link::after {
+        width: 3px;
+        height: 17px;
+        top:0;
+        right:0;
+    }
+
+    .toggle {
+        display: flex;
+    }
+
+    .hamburger {
+        position: relative;
+        z-index: 100;
+    }
+    /* HOMEPAGE ////////////////////////////////////*/
+
+    .homepage {
+        padding: 112px 24px 48px;
+        background-size: cover;
+    }
+
+    .h5 {
+        font-size: 16px;
+    }
+
+    .h1 {
+       font-size: 80px; 
+    }
+    .paragraph {
+        font-size: 15px;
+        padding: 0 20px;
+    }
+
+    .home__text {
+        text-align: center;
+        justify-content: space-evenly;
+    }
+
+    .homepage__button {
+        padding: 8.6rem 3rem;
+        margin-top: 81px;
+    }
+
+    .homepage__button::after {
+        width: 21.4rem;
+        height: 21.4rem;
+    }
+
+    /*DESTINATION /////////////////////////*/
+
+    .destination {
+        background-size: cover;
+        padding: 91px 24px 58px;
+        height: 100%;
+    }
+    .box1__pick {
+        margin: 10px 0 0 0;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .box1__planetfig {
+        width: 170px;
+        height: 170px;
+        margin-top: 32px;
+        margin-bottom: 20px;
+    }
+
+    .planetimage {
+        width: 170px;
+    }
+
+    .destination-box2 {
+        padding: 0;
+    }
+
+    .planet__title {
+        font-size: 56px ;
+    }
+
+    .planet__paragraph {
+        padding: 0;
+        margin-bottom: 5.5rem;
+    }
+
+    .planetsubinfo {
+        flex-direction: column;
+    }
+
+    .avgdistance {
+        margin-bottom: 12px;
+    }
 
 
-} */
+    /* CREW PAGE //////////////////////////// */
+
+    .crew {
+        padding: 150px 24px 104px;
+    }
+
+    .crew__call {
+        font-size: 16px;
+        
+        position: absolute;
+        top: 110px;
+        left: 50px;
+    }
+
+    .crew__box2 {
+        height: 223px;
+        order: -2;
+        margin-bottom: 32px;
+    }
+    .crew__image {
+        height: 223px;
+    }
+
+    .crew__box1-buttons {
+        padding: 0;
+        order: -1;
+        margin-bottom: 36px;
+    }
+
+    .crew-text__crew-role {
+        font-size: 16px ;
+        margin-bottom: 20px;
+    }
+
+    .crew-text__crew-name {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .crew-text__crew-bio {
+        font-size: 15px;
+    }
+
+    /*TECHNOLOGY PAGE ////////////////*/
+
+    .techtemplate {
+        padding-top: 110px;
+    }
+
+    .tech__call {
+        font-size: 16px;
+        padding: 0;
+        align-self: center;
+        margin-bottom: 37px;
+    }
+
+    .techcontent__imgbox {
+        height: 170px;
+        margin-bottom: 26px;
+    }
+    .techcontent__img {
+        height: 170px;
+    }
+
+    .techcontent__btn {
+        font-size: 16px;
+        padding: 11px 19px;
+    }
+    .techcontent__btn:nth-of-type(2) {
+        margin-right: 16px;
+        margin-left: 16px;
+    }
+
+    .techcontent__text-subtitle {
+        font-size: 14px;
+    }
+
+    .techcontent__text {
+        font-size: 24px;
+    }
+
+    .techcontent__text-p {
+        padding: 0 80px;
+    }
+}
