@@ -57,9 +57,7 @@ main {
     justify-content: space-between;
 }
 
-.navbar__logo {
-    margin-left: 55px;
-}
+
 
 .hamburger {
     display: none;
@@ -181,6 +179,16 @@ main {
     font-family: var(--family-Barlow);
     font-size: 18px;
     font-weight: 400;
+}
+
+.navbar__logobox {
+    border: none !important;
+    padding: 0 !important;
+    width: 48px;
+    height: 48px;
+    margin-left: 55px;
+    border-radius: 50%;
+    
 }
 /* HOMEPAGE ////////////////////////////////////////////////////////////////*/
 
