@@ -6,7 +6,7 @@ That was my fist react project!
 Its is responsive for mobile(375px), tablet(530px - 768px) and desktop(1100px - 1440px)
 It also has some animations(check it out).
 
-Obs: If you're using Firefox, you should see some bugs at the navigation bar. That's because Firefox does not have the backdrop-filter property full implemented yet. Therefore, it's disabled by default but you can enable it. But even then it wouldn't show all the effects.
+Obs: If you're using Firefox, you should see some bugs on the navigation bar. That's because Firefox does not have the backdrop-filter property fully implemented yet. Therefore, it's disabled by default but you can enable it. But even then it wouldn't show all the effects.
 
 ## Table of contents
 
@@ -58,5 +58,5 @@ And almost everything that is included in the project i've learned searching on 
 
 ## Author
 
-- Website - [Pedro Machado](github.com/phmac7)
+- Website - [Pedro Machado](https://github.com/phmac7)
 - Frontend Mentor - [@phmac7](https://www.frontendmentor.io/profile/phmac7)
