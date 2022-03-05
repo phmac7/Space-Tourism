@@ -1,8 +1,8 @@
 import React from 'react';
 import PlanetImage from './PlanetImage';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import DescriptionPlanet from './DescriptionPlanet'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 function DestinationTemplate({ planetdata }) {
 

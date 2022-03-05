@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import AnimatedPage from '../AnimatedPage'
 import { motion } from 'framer-motion'
 
 function HomePage() {
