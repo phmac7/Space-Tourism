@@ -58,5 +58,5 @@ And almost everything that is included in the project i've learned searching on 
 
 ## Author
 
-- Website - [Pedro Machado](github.com/phmac7)
+- Website - [Pedro Machado](https://github.com/phmac7)
 - Frontend Mentor - [@phmac7](https://www.frontendmentor.io/profile/phmac7)
