@@ -1048,6 +1048,10 @@ phone 375px= 23.44em
 
     /*TECHNOLOGY PAGE ////////////////*/
 
+    .technology {
+        height: 100%;
+    }
+
     .techtemplate {
         padding-top: 110px;
     }
